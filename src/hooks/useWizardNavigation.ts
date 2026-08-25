@@ -52,7 +52,7 @@ export interface WizardNavigationState<TStepId extends string = string> {
   canProceed: boolean;
 }
 
-export interface SidebarStep<TStepId extends string = string> extends WizardStep<TStepId> {
+interface SidebarStep<TStepId extends string = string> extends WizardStep<TStepId> {
   index: number;
   isActive: boolean;
   isVisited: boolean;
@@ -144,5 +144,3 @@ export function useWizardNavigation<TStepId extends string = string>(
     canProceed,
   };
 }
-
-export default useWizardNavigation;

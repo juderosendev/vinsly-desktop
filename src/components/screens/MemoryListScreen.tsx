@@ -12,7 +12,6 @@ import { StarIcon } from '../icons/StarIcon';
 import { DocumentIcon } from '../icons/DocumentIcon';
 import { ListIcon } from '../icons/ListIcon';
 import { GridIcon } from '../icons/GridIcon';
-import { LayersIcon } from '../icons/LayersIcon';
 import { NavigationTabs, TabView } from '../NavigationTabs';
 import { SpinnerIcon } from '../icons/SpinnerIcon';
 import { DeleteIcon } from '../icons/DeleteIcon';

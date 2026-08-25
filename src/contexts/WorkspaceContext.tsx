@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useCallback, useEffect } from 'react';
-import { Agent, AgentScope, Skill, LoadAgentsOptions, SlashCommand, ClaudeMemory, DetailedScanResult } from '../types';
+import { Agent, AgentScope, Skill, LoadAgentsOptions, SlashCommand, ClaudeMemory, DetailedScanResult, ScanSettings } from '../types';
 import { MCPServer, MCPScope } from '../types/mcp';
 import { Hook } from '../types/hooks';
 import { useWorkspace } from '../hooks/useWorkspace';
@@ -13,9 +13,7 @@ import { useHistory } from '../hooks/useHistory';
 import { useToast } from './ToastContext';
 import { useAppBootstrapContext } from './AppBootstrapContext';
 import { DEFAULT_HOME_DISCOVERY_DEPTH, discoverHomeDirectories } from '../utils/homeDiscovery';
-import { saveScanSettings } from '../utils/scanSettings';
 import { AgentCommands, SkillCommands } from '../utils/workspaceCommands';
-import { ScanSettings } from '../types';
 import { devLog } from '../utils/devLogger';
 
 const HOME_DISCOVERY_MAX_DEPTH = DEFAULT_HOME_DISCOVERY_DEPTH;

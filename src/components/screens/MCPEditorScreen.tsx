@@ -15,7 +15,7 @@ import {
 } from '../../types/mcp';
 import { checkMCPServerHealth } from '../../utils/tauriCommands';
 import { wizardStepVariants } from '../../animations';
-import { InputField, TextareaField } from '../form';
+import { InputField } from '../form';
 import { WizardStepHeader } from '../wizard';
 import { CheckIcon } from '../icons/CheckIcon';
 import { WarningIcon } from '../icons/WarningIcon';
@@ -1297,7 +1297,6 @@ export const MCPEditorScreen: React.FC<MCPEditorScreenProps> = ({
               {sidebarSteps
                 .filter(step => step.id !== 'template' && step.id !== 'review') // Skip template and review in edit mode
                 .map(step => {
-                  const isClickable = true; // All steps navigable in edit mode
                   return (
                     <button
                       type="button"

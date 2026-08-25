@@ -1,5 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useState, useEffect } from 'react';
 import { Theme } from '../hooks/useTheme';
 import { LoadAgentsOptions, ScanSettings, DetailedScanResult } from '../types';
 import { ClaudeSession } from '../types/session';
@@ -12,7 +11,6 @@ import { FeedbackModal } from './FeedbackModal';
 import { ScanModal } from './ScanModal';
 import { SessionIndicator } from './SessionIndicator';
 import { SessionPanel } from './SessionPanel';
-import { iconButtonVariants, themeToggleVariants } from '../animations';
 import { getStorageItem, setStorageItem } from '../utils/storage';
 import { useToast } from '../contexts/ToastContext';
 import { PendingUpdateDetails } from '../types/updater';

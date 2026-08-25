@@ -1,14 +1,13 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { open } from '@tauri-apps/plugin-dialog';
+import { open, save, open as openFileDialog } from '@tauri-apps/plugin-dialog';
 import { openUrl } from '@tauri-apps/plugin-opener';
 import { ScanSettings } from '../types';
 import { getScanSettings, saveScanSettings, addWatchedDirectory, removeWatchedDirectory } from '../utils/scanSettings';
 import { DeleteIcon } from './icons/DeleteIcon';
 import { PendingUpdateDetails } from '../types/updater';
-import { checkFullDiskAccess, openFullDiskAccessSettings, exportConfigBundle, importConfigBundle, readBundleManifest, BundleManifest } from '../utils/tauriCommands';
+import { checkFullDiskAccess, openFullDiskAccessSettings, exportConfigBundle, importConfigBundle } from '../utils/tauriCommands';
 import { devLog } from '../utils/devLogger';
-import { save, open as openFileDialog } from '@tauri-apps/plugin-dialog';
 
 // Keys for return-to-settings flow after FDA grant
 export const FDA_RETURN_TO_SETTINGS_KEY = 'vinsly-fda-return-to-settings';
@@ -55,8 +54,6 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
   onDisplayNameChange,
   onScanSettingsChange,
   scanSettings,
-  onCheckForUpdates,
-  isCheckingUpdate,
   isInstallingUpdate,
   pendingUpdate,
   appVersion,
@@ -84,9 +81,6 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
   const [importError, setImportError] = useState<string | null>(null);
   const displayNameSaveTimeoutRef = useRef<number | null>(null);
   const postGrantCheckTimeoutRef = useRef<number | null>(null);
-  const lastCheckedLabel = lastUpdateCheckAt
-    ? new Date(lastUpdateCheckAt).toLocaleString()
-    : 'Not checked yet';
   const fullDiskStatusLabel =
     fullDiskStatus === 'granted'
       ? 'Granted'

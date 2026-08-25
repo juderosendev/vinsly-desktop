@@ -11,7 +11,6 @@ import {
   validateHook,
   createHookId,
   getHookEventDisplayName,
-  getHookEventDescription,
   getHookExecutionTypeDisplayName,
   getHookEnvVariables,
   getHookStdinFields,
@@ -552,7 +551,6 @@ export const HooksEditorScreen: React.FC<HooksEditorScreenProps> = ({
   // Get available environment variables and stdin fields for current event type
   const availableEnvVars = getHookEnvVariables(formData.eventType);
   const availableStdinFields = getHookStdinFields(formData.eventType);
-  const supportsMatchers = eventSupportsMatchers(formData.eventType);
   const supportsPromptHooks = eventSupportsPromptHooks(formData.eventType);
 
   const renderStepContent = () => {

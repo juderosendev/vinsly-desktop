@@ -1,5 +1,4 @@
 import { agentToMarkdown, exportAgent, exportAgentsAsZip } from '../agentExport';
-import { Agent, AgentScope } from '../../types';
 import { createMockAgent } from '../../test/helpers';
 import * as dialog from '@tauri-apps/plugin-dialog';
 import * as tauriCommands from '../tauriCommands';

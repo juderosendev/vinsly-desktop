@@ -63,8 +63,6 @@ export const TerminalProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   // Store output callbacks per terminal
   const outputCallbacksRef = useRef<Map<string, Set<(data: string) => void>>>(new Map());
   const exitCallbacksRef = useRef<Map<string, Set<(exitCode: number | null) => void>>>(new Map());
-  const unlistenOutputRef = useRef<UnlistenFn | null>(null);
-  const unlistenExitRef = useRef<UnlistenFn | null>(null);
 
   // Load persisted state on mount
   useEffect(() => {

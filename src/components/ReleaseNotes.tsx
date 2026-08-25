@@ -55,5 +55,3 @@ export const ReleaseNotes: React.FC<ReleaseNotesProps> = ({ notes, maxItems = 5 
     </ul>
   );
 };
-
-export default ReleaseNotes;

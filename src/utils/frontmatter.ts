@@ -16,7 +16,7 @@ const toKebabCase = (str: string): string => {
  * Convert kebab-case to camelCase
  * e.g., "disable-model-invocation" -> "disableModelInvocation"
  */
-export const toCamelCase = (str: string): string => {
+const toCamelCase = (str: string): string => {
   return str.replace(/-([a-z])/g, (_, letter) => letter.toUpperCase());
 };
 

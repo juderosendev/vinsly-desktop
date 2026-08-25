@@ -58,7 +58,7 @@ export interface UseHooksOptions {
   showToast: (type: ToastType, message: string) => void;
 }
 
-export interface LoadHooksOptions {
+interface LoadHooksOptions {
   projectPaths?: string[];
   includeGlobal?: boolean;
 }

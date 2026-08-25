@@ -4,7 +4,7 @@
  */
 
 import { Agent, Skill, AgentScope } from '../types';
-import { Resource, ResourceConfig, ResourceType, AgentResource, SkillResource } from '../types/resource';
+import { ResourceConfig, ResourceType, AgentResource, SkillResource } from '../types/resource';
 import { getStorageItem, setStorageItem } from './storage';
 
 /**
@@ -76,7 +76,7 @@ export async function markFavorites<T extends Agent | Skill>(
 /**
  * Generate unique name for duplicated resource
  */
-export function generateUniqueName<T extends Agent | Skill>(
+function generateUniqueName<T extends Agent | Skill>(
   baseName: string,
   existingItems: T[]
 ): string {
@@ -173,8 +173,8 @@ export function filterResources<T extends Agent | Skill>(
 /**
  * Sort resources by a given field
  */
-export type SortField = 'name' | 'scope' | 'model';
-export type SortDirection = 'asc' | 'desc';
+type SortField = 'name' | 'scope' | 'model';
+type SortDirection = 'asc' | 'desc';
 
 export function sortResources<T extends Agent | Skill>(
   items: T[],

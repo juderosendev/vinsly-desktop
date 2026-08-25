@@ -116,5 +116,3 @@ export const UpdateAvailableModal: React.FC<UpdateAvailableModalProps> = ({
     </AnimatePresence>
   );
 };
-
-export default UpdateAvailableModal;

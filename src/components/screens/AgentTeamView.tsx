@@ -4,7 +4,6 @@ import { toPng } from 'html-to-image';
 import { save } from '@tauri-apps/plugin-dialog';
 import { exportBinaryFile } from '../../utils/tauriCommands';
 import { Agent, AgentScope } from '../../types';
-import { buttonVariants, fadeIn } from '../../animations';
 import { StarIcon } from '../icons/StarIcon';
 import { ListIcon } from '../icons/ListIcon';
 import { LayersIcon } from '../icons/LayersIcon';
@@ -129,7 +128,6 @@ const getAgentCardWidth = (label: string) => {
 
 export const AgentTeamView: React.FC<AgentTeamViewProps> = ({
   agents,
-  onBack,
   onShowList,
   onShowSkills,
   onShowMemory,

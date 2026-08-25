@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 
-export type PlatformIdentifier = 'mac' | 'win' | 'linux' | 'unknown';
+type PlatformIdentifier = 'mac' | 'win' | 'linux' | 'unknown';
 
 const detectMacOSMajorVersion = (): number | null => {
   if (typeof navigator === 'undefined') {

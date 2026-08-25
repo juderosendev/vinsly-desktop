@@ -1,7 +1,7 @@
 import { useCallback, useState } from 'react';
 import { Agent, AgentScope, ClaudeMemory, Skill, SlashCommand } from '../types';
 import { MCPServer } from '../types/mcp';
-import { Hook, HookScope } from '../types/hooks';
+import { Hook } from '../types/hooks';
 
 export type View =
   | 'subagents'
@@ -25,7 +25,7 @@ export type View =
   | 'create-hook'
   | 'edit-hook';
 
-export type ListViewDestination = 'subagents' | 'team' | 'skills' | 'commands' | 'memory' | 'mcp' | 'hooks';
+type ListViewDestination = 'subagents' | 'team' | 'skills' | 'commands' | 'memory' | 'mcp' | 'hooks';
 
 export interface UseNavigationResult {
   currentView: View;

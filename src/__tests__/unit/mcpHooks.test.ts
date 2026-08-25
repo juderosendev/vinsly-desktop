@@ -3,8 +3,6 @@
  */
 
 import {
-  MCPScope,
-  MCPServerType,
   MCPServer,
   MCPServerConfig,
   createMCPServerId,
@@ -19,7 +17,6 @@ import {
 
 import {
   HookEventType,
-  HookScope,
   Hook,
   HookConfig,
   createHookId,
@@ -35,7 +32,6 @@ import {
   getHookStdinFields,
   eventSupportsMatchers,
   eventSupportsPromptHooks,
-  HOOK_ENV_VARIABLES,
 } from '../../types/hooks';
 
 describe('MCP Server Types', () => {

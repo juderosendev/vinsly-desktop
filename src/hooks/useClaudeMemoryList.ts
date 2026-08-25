@@ -13,7 +13,7 @@ export interface UseClaudeMemoryListOptions {
   scanSettingsRef: React.RefObject<ScanSettings>;
 }
 
-export interface LoadMemoriesOptions {
+interface LoadMemoriesOptions {
   projectPaths?: string[];
   includeGlobal?: boolean;
 }

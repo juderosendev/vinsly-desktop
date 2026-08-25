@@ -89,7 +89,7 @@ export interface PromptHookResponse {
 /**
  * Event-specific hook output
  */
-export interface HookSpecificOutput {
+interface HookSpecificOutput {
   hookEventName: HookEventType;
   // PreToolUse specific
   permissionDecision?: 'allow' | 'deny' | 'ask';
@@ -110,7 +110,7 @@ export interface HookSpecificOutput {
  * Event types that support matcher patterns
  * Per official Claude Code docs: tool-related events plus PreCompact and SessionStart
  */
-export const EVENTS_WITH_MATCHER_SUPPORT: HookEventType[] = [
+const EVENTS_WITH_MATCHER_SUPPORT: HookEventType[] = [
   'PreToolUse',
   'PostToolUse',
   'PostToolUseFailure',
@@ -124,7 +124,7 @@ export const EVENTS_WITH_MATCHER_SUPPORT: HookEventType[] = [
  * Event types that support prompt-based hooks (LLM evaluation)
  * Per official Claude Code docs
  */
-export const EVENTS_WITH_PROMPT_SUPPORT: HookEventType[] = [
+const EVENTS_WITH_PROMPT_SUPPORT: HookEventType[] = [
   'PreToolUse',
   'PermissionRequest',
   'UserPromptSubmit',
@@ -150,7 +150,7 @@ export function eventSupportsMatchers(eventType: HookEventType): boolean {
  * Tool matchers - available tools that can be matched
  * Used for PreToolUse, PostToolUse, PostToolUseFailure, PermissionRequest
  */
-export const TOOL_MATCHERS = [
+const TOOL_MATCHERS = [
   'Task',
   'TaskOutput',
   'Bash',
@@ -173,7 +173,7 @@ export const TOOL_MATCHERS = [
 /**
  * Notification matchers - notification types that can be matched
  */
-export const NOTIFICATION_MATCHERS = [
+const NOTIFICATION_MATCHERS = [
   'permission_prompt',
   'idle_prompt',
   'auth_success',
@@ -183,12 +183,12 @@ export const NOTIFICATION_MATCHERS = [
 /**
  * PreCompact matchers - compaction triggers
  */
-export const PRECOMPACT_MATCHERS = ['manual', 'auto'] as const;
+const PRECOMPACT_MATCHERS = ['manual', 'auto'] as const;
 
 /**
  * SessionStart matchers - session start sources
  */
-export const SESSION_START_MATCHERS = ['startup', 'resume', 'clear', 'compact'] as const;
+const SESSION_START_MATCHERS = ['startup', 'resume', 'clear', 'compact'] as const;
 
 /**
  * Matcher category types
@@ -645,7 +645,7 @@ export function validateHook(hook: Partial<Hook>): string[] {
  *
  * All other context is provided via stdin JSON, not environment variables.
  */
-export const HOOK_ENV_VARIABLES = [
+const HOOK_ENV_VARIABLES = [
   'CLAUDE_PROJECT_DIR',      // Absolute path to project root
   'CLAUDE_CODE_REMOTE',      // "true" if web environment, empty/unset for local
 ];
@@ -653,7 +653,7 @@ export const HOOK_ENV_VARIABLES = [
 /**
  * Additional env var for SessionStart only
  */
-export const SESSION_START_ENV_VARIABLES = [
+const SESSION_START_ENV_VARIABLES = [
   ...HOOK_ENV_VARIABLES,
   'CLAUDE_ENV_FILE',         // Path to file for persisting environment variables
 ];

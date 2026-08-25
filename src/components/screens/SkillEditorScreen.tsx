@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useMemo, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { AgentScope, AgentModel, Skill, ToolCategory, ToolRisk, Tool } from '../../types';
+import { AgentScope, Skill, ToolCategory, ToolRisk, Tool } from '../../types';
 import { InputField, TextareaField } from '../form';
 import { FolderIcon } from '../icons/FolderIcon';
 import { SpinnerIcon } from '../icons/SpinnerIcon';
@@ -10,10 +10,9 @@ import { devLog } from '../../utils/devLogger';
 import { WizardStepHeader } from '../wizard';
 import { wizardStepVariants } from '../../animations';
 import { CheckIcon } from '../icons/CheckIcon';
-import { WarningIcon } from '../icons/WarningIcon';
 import { ToolsSelector } from '../tools/ToolsSelector';
 import { AVAILABLE_TOOLS } from '../../constants';
-import { emptyToolsValue, toolsSelectionToValue, toolsValueToArray } from '../../utils/toolHelpers';
+import { toolsValueToArray } from '../../utils/toolHelpers';
 
 type SkillWizardStepId = 'scope' | 'identifier' | 'tools' | 'instructions' | 'review';
 

@@ -14,7 +14,7 @@ import { devLog } from './devLogger';
 // Types
 // ============================================================================
 
-export interface GeneratedAgentFields {
+interface GeneratedAgentFields {
   name: string;
   description: string;
   systemPrompt: string;

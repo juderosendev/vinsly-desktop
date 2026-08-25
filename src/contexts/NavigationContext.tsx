@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useCallback } from 'react';
-import { Agent, AgentScope, Skill, SlashCommand, ClaudeMemory } from '../types';
+import { Agent, Skill, SlashCommand, ClaudeMemory } from '../types';
 import { MCPServer } from '../types/mcp';
 import { Hook } from '../types/hooks';
 import { useNavigation, View } from '../hooks/useNavigation';

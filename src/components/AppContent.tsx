@@ -1,6 +1,6 @@
 import React, { useState, useCallback, useEffect, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Agent, AgentScope, ScanSettings, Skill, ClaudeMemory } from '../types';
+import { Agent, AgentScope, ScanSettings, Skill } from '../types';
 import { AgentListScreen } from './screens/AgentListScreen';
 import { SkillListScreen } from './screens/SkillListScreen';
 import { AgentEditorScreen } from './screens/AgentEditorScreen';
@@ -61,7 +61,6 @@ export const AppContent: React.FC = () => {
     welcomePresented,
     setWelcomePresented,
     appVersion,
-    platformIdentifier,
     isMacLike,
     macOSMajorVersion,
   } = useAppBootstrapContext();

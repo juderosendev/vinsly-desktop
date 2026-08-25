@@ -305,7 +305,7 @@ export interface MCPServerConfigRaw {
   env?: Record<string, string>;
 }
 
-export interface MCPConfigFileRaw {
+interface MCPConfigFileRaw {
   mcpServers: Record<string, MCPServerConfigRaw>;
 }
 
@@ -460,7 +460,7 @@ export async function storeMCPOAuthToken(
 }
 
 // OAuth token data from keychain
-export interface MCPOAuthTokenRaw {
+interface MCPOAuthTokenRaw {
   access_token: string;
   refresh_token: string | null;
   expires_at: number | null;
@@ -500,7 +500,7 @@ export interface HookConfigRaw {
   timeout?: number;                          // Timeout in seconds
 }
 
-export interface HooksConfigFileRaw {
+interface HooksConfigFileRaw {
   hooks: Record<string, HookConfigRaw[]>;
 }
 
@@ -707,7 +707,7 @@ export async function sendFeedback(params: SendFeedbackParams): Promise<void> {
 // Config Bundle Export/Import
 // ============================================================================
 
-export interface BundleCounts {
+interface BundleCounts {
   agents: number;
   skills: number;
   commands: number;
@@ -716,7 +716,7 @@ export interface BundleCounts {
   hooks: number;
 }
 
-export interface BundleManifest {
+interface BundleManifest {
   version: string;
   exported_at: string;
   vinsly_version: string;

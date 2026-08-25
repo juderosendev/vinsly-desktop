@@ -82,5 +82,3 @@ export const UpdateCompleteModal: React.FC<UpdateCompleteModalProps> = ({
     </AnimatePresence>
   );
 };
-
-export default UpdateCompleteModal;

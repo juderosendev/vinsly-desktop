@@ -13,17 +13,6 @@ const RiskBadge: React.FC<{ risk: ToolRisk }> = ({ risk }) => {
     return <span className={`px-2 py-0.5 text-xs font-medium rounded-md ${riskColor[risk]}`}>{risk}</span>;
 };
 
-const colorMap: { [key: string]: string } = {
-  red: 'border-red-500',
-  blue: 'border-blue-500',
-  green: 'border-green-500',
-  yellow: 'border-yellow-500',
-  purple: 'border-purple-500',
-  orange: 'border-orange-500',
-  pink: 'border-pink-500',
-  cyan: 'border-cyan-500',
-};
-
 const colorBgMap: { [key: string]: string } = {
   red: 'bg-red-500',
   blue: 'bg-blue-500',
@@ -42,7 +31,6 @@ interface AgentPreviewCardProps {
 }
 
 export const AgentPreviewCard: React.FC<AgentPreviewCardProps> = ({ agent, hideSystemPrompt, systemPromptSlot }) => {
-  const borderColorClass = 'border-v-accent';
   const badgeColorClass = agent.frontmatter.color ? colorBgMap[agent.frontmatter.color] : '';
 
   const path = agent.scope === AgentScope.Project

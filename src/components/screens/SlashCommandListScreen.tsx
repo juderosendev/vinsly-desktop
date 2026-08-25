@@ -13,7 +13,6 @@ import { StarIcon } from '../icons/StarIcon';
 import { TerminalIcon } from '../icons/TerminalIcon';
 import { ListIcon } from '../icons/ListIcon';
 import { GridIcon } from '../icons/GridIcon';
-import { LayersIcon } from '../icons/LayersIcon';
 import { NavigationTabs, TabView } from '../NavigationTabs';
 import { SpinnerIcon } from '../icons/SpinnerIcon';
 import { DuplicateIcon } from '../icons/DuplicateIcon';

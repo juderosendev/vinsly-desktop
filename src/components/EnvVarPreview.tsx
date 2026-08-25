@@ -4,7 +4,6 @@ import {
   resolveEnvVarRefs,
   isSensitiveVar,
   maskSensitiveValue,
-  EnvVarRef,
   EnvVarResolution,
 } from '../utils/envVarUtils';
 import { getEnvVars } from '../utils/tauriCommands';
@@ -210,5 +209,3 @@ export const EnvVarIndicator: React.FC<{ value: string }> = ({ value }) => {
     </span>
   );
 };
-
-export default EnvVarPreview;

@@ -1,5 +1,4 @@
 import React from 'react';
-import { View } from '../../hooks/useNavigation';
 import { useNavigationContext } from '../../contexts/NavigationContext';
 
 interface BreadcrumbItem {

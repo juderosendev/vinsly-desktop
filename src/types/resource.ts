@@ -16,7 +16,7 @@ export enum ResourceType {
 /**
  * Base interface for common resource properties
  */
-export interface BaseResource {
+interface BaseResource {
   id: string;
   name: string;
   scope: AgentScope;
@@ -51,7 +51,7 @@ export interface SkillResource extends BaseResource {
 /**
  * Union type for all resources
  */
-export type Resource = AgentResource | SkillResource;
+type Resource = AgentResource | SkillResource;
 
 /**
  * Type guard for Agent resources

@@ -179,5 +179,3 @@ export function useCommandNameValidation(
     autoLowercase: true,
   });
 }
-
-export default useNameValidation;

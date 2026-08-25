@@ -6,7 +6,7 @@
 /**
  * Status of a Claude Code session
  */
-export type SessionStatus = 'active' | 'idle' | 'error';
+type SessionStatus = 'active' | 'idle' | 'error';
 
 /**
  * Information about a detected Claude Code session

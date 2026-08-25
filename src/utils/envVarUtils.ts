@@ -124,7 +124,7 @@ export function getEnvVarNames(value: string): string[] {
 /**
  * Count unresolved variables in a set of resolutions
  */
-export function countUnresolvedVars(resolutions: EnvVarResolution[]): number {
+function countUnresolvedVars(resolutions: EnvVarResolution[]): number {
   return resolutions.filter(r => r.source === 'unresolved').length;
 }
 

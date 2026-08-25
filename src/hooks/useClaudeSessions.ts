@@ -1,5 +1,5 @@
 import { useCallback, useState, useEffect, useRef } from 'react';
-import { detectClaudeSessions, ClaudeSessionRaw, getSessionTokenUsage } from '../utils/tauriCommands';
+import { detectClaudeSessions, getSessionTokenUsage } from '../utils/tauriCommands';
 import { ClaudeSession, rawToSession } from '../types/session';
 import { devLog } from '../utils/devLogger';
 

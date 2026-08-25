@@ -1,5 +1,5 @@
 import { skillFileToSkill, skillToMarkdown } from '../skillParser';
-import { AgentScope, Skill } from '../../types';
+import { AgentScope } from '../../types';
 import { SkillFile } from '../tauriCommands';
 import { createMockMarkdown, createMockSkill } from '../../test/helpers';
 

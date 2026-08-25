@@ -4,7 +4,6 @@
  * Shows Mac and Windows/Linux variants
  */
 
-import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface KeyboardShortcut {

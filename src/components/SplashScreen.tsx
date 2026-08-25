@@ -39,5 +39,3 @@ export const SplashScreen: React.FC<SplashScreenProps> = ({ isVisible, theme }) 
   </AnimatePresence>
   );
 };
-
-export default SplashScreen;

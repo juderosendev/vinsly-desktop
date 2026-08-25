@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { ClaudeSession, getStatusBgColor, getProjectName } from '../types/session';
+import React from 'react';
+import { ClaudeSession } from '../types/session';
 
 interface SessionIndicatorProps {
   sessions: ClaudeSession[];
@@ -12,8 +12,6 @@ export const SessionIndicator: React.FC<SessionIndicatorProps> = ({
   isLoading,
   onClick,
 }) => {
-  const activeSessions = sessions.filter(s => s.status === 'active');
-  const hasActiveSessions = activeSessions.length > 0;
   const totalSessions = sessions.length;
 
   if (isLoading && sessions.length === 0) {

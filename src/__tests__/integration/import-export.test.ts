@@ -5,8 +5,8 @@
 
 import JSZip from 'jszip';
 import { importAgentsFromZip, markdownToAgent, hasSubagentDefinition } from '../../utils/agentImport';
-import { agentToMarkdown, exportAgentsAsZip } from '../../utils/agentExport';
-import { Agent, AgentScope } from '../../types';
+import { agentToMarkdown } from '../../utils/agentExport';
+import { AgentScope } from '../../types';
 import { createMockAgent } from '../../test/helpers';
 
 // Mock Tauri plugins for integration tests

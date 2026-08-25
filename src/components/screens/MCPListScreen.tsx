@@ -7,7 +7,6 @@ import { PlusIcon } from '../icons/PlusIcon';
 import { SearchIcon } from '../icons/SearchIcon';
 import { ListIcon } from '../icons/ListIcon';
 import { GridIcon } from '../icons/GridIcon';
-import { LayersIcon } from '../icons/LayersIcon';
 import { DeleteIcon } from '../icons/DeleteIcon';
 import { GlobeIcon } from '../icons/GlobeIcon';
 import { FolderIcon } from '../icons/FolderIcon';
@@ -22,7 +21,6 @@ import { NavigationTabs, TabView } from '../NavigationTabs';
 import { ConfirmDialog } from '../ConfirmDialog';
 import { getStorageItem, setStorageItem } from '../../utils/storage';
 import { fuzzyMatch } from '../../utils/fuzzyMatch';
-import { useToast } from '../../contexts/ToastContext';
 import { useMCPHealth } from '../../hooks/useMCPHealth';
 import { useMCPAuth } from '../../hooks/useMCPAuth';
 import { SkeletonList } from '../shared/Skeleton';
@@ -231,7 +229,6 @@ export const MCPListScreen: React.FC<MCPListScreenProps> = ({
   shortcutHint,
   isLoading = false,
 }) => {
-  const { showToast } = useToast();
   const [filter, setFilter] = useState<Filter>('All');
   const [searchQuery, setSearchQuery] = useState('');
   const [layoutMode, setLayoutMode] = useState<LayoutMode>('table');

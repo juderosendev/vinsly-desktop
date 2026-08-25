@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { createPortal } from 'react-dom';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Agent, AgentScope } from '../types';
 import { EditIcon } from './icons/EditIcon';
 import { DuplicateIcon } from './icons/DuplicateIcon';

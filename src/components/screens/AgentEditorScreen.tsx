@@ -7,13 +7,12 @@ import { CodeEditor } from '../CodeEditor';
 import { AgentPreviewCard } from '../AgentPreviewCard';
 import { wizardStepVariants } from '../../animations';
 import { InputField, TextareaField } from '../form';
-import { RiskBadge, ToolsSelector } from '../tools';
+import { ToolsSelector } from '../tools';
 import { WizardStepHeader } from '../wizard';
 import { CheckIcon } from '../icons/CheckIcon';
 import { WarningIcon } from '../icons/WarningIcon';
 import { FolderIcon } from '../icons/FolderIcon';
 import { SpinnerIcon } from '../icons/SpinnerIcon';
-import { InfoIcon } from '../icons/InfoIcon';
 import { extractProjectRootFromAgentPath } from '../../utils/path';
 import { devLog } from '../../utils/devLogger';
 import { serializeFrontmatter } from '../../utils/frontmatter';
@@ -561,7 +560,6 @@ export const AgentEditorScreen: React.FC<AgentEditorScreenProps> = ({ agent, onS
   const currentStep = WIZARD_STEPS[currentStepIndex] ?? WIZARD_STEPS[0];
   const isLastStep = currentStepIndex === WIZARD_STEPS.length - 1;
 
-  // Define isStepComplete first (needed by getNextIncompleteStep)
   // Get visible steps based on creation method
   const getVisibleSteps = useCallback(() => {
     if (creationMethod === 'automatic') {
@@ -630,21 +628,6 @@ export const AgentEditorScreen: React.FC<AgentEditorScreenProps> = ({ agent, onS
   };
 
   const completionPercentage = getCompletionPercentage();
-
-  // Get next incomplete step (among visible steps)
-  const getNextIncompleteStep = (): number | null => {
-    for (let i = 0; i < WIZARD_STEPS.length; i++) {
-      const step = WIZARD_STEPS[i];
-      // Skip steps that aren't visible for current creation method
-      if (!visibleSteps.some((vs) => vs.id === step.id)) continue;
-      if (!isStepComplete(step.id)) {
-        return i;
-      }
-    }
-    return null;
-  };
-
-  const nextIncompleteStepIndex = getNextIncompleteStep();
 
   const canProceedFromStep = (stepId: WizardStepId) => {
     switch (stepId) {
@@ -1536,8 +1519,6 @@ export const AgentEditorScreen: React.FC<AgentEditorScreenProps> = ({ agent, onS
 
   const title =
     mode === 'create' ? 'Create New Agent' : mode === 'duplicate' ? 'Duplicate Agent' : 'Edit Agent';
-  const breadcrumbLabel =
-    mode === 'create' ? 'Create New Agent' : mode === 'duplicate' ? 'Duplicate Agent' : `Edit ${agent.name}`;
   const saveLabel = mode === 'edit' ? 'Save Changes' : 'Save Agent';
   // Filter sidebar steps to only show visible ones based on creation method
   const visibleStepIds = new Set(visibleSteps.map((s) => s.id));

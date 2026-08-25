@@ -142,7 +142,7 @@ export function hasSubagentDefinition(content: string): boolean {
  */
 export function markdownToAgent(
   content: string,
-  fileName: string,
+  _fileName: string,
   scope: AgentScope = AgentScope.Global,
   actualPath?: string
 ): Agent | null {

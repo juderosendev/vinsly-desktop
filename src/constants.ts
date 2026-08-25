@@ -1,5 +1,5 @@
 
-import { Agent, AgentScope, AgentModel, Tool, ToolRisk, ToolCategory } from './types';
+import { Agent, AgentScope, AgentModel, Tool, ToolRisk } from './types';
 
 export const MOCK_AGENTS: Agent[] = [
   {

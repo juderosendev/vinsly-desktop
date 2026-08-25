@@ -1,4 +1,4 @@
-import { homeDir, join, normalize } from '@tauri-apps/api/path';
+import { homeDir, join } from '@tauri-apps/api/path';
 import { devLog } from './devLogger';
 
 let cachedHomeDir: string | null = null;
@@ -7,7 +7,7 @@ let cachedHomeDir: string | null = null;
  * Normalize path separators to forward slashes for consistent cross-platform handling.
  * Use this before splitting paths or extracting path components.
  */
-export function normalizeSeparators(path: string): string {
+function normalizeSeparators(path: string): string {
   return path.replace(/\\/g, '/');
 }
 
@@ -15,7 +15,7 @@ export function normalizeSeparators(path: string): string {
  * Split a path into its components, handling both Windows and Unix separators.
  * Normalizes backslashes to forward slashes before splitting.
  */
-export function getPathParts(path: string): string[] {
+function getPathParts(path: string): string[] {
   return normalizeSeparators(path).split('/').filter(Boolean);
 }
 

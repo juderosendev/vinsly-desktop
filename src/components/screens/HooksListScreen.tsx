@@ -6,7 +6,6 @@ import { PlusIcon } from '../icons/PlusIcon';
 import { SearchIcon } from '../icons/SearchIcon';
 import { ListIcon } from '../icons/ListIcon';
 import { GridIcon } from '../icons/GridIcon';
-import { LayersIcon } from '../icons/LayersIcon';
 import { DeleteIcon } from '../icons/DeleteIcon';
 import { GlobeIcon } from '../icons/GlobeIcon';
 import { FolderIcon } from '../icons/FolderIcon';

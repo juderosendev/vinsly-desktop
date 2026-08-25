@@ -58,7 +58,7 @@ export interface UseMCPServersOptions {
   showToast: (type: ToastType, message: string) => void;
 }
 
-export interface LoadServersOptions {
+interface LoadServersOptions {
   projectPaths?: string[];
   includeGlobal?: boolean;
 }

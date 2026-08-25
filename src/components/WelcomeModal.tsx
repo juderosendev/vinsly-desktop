@@ -32,9 +32,7 @@ export const WelcomeModal: React.FC<WelcomeModalProps> = ({
   defaultScanHome = false,
   defaultFullDiskAccess = false,
   isMacPlatform = false,
-  macOSVersionMajor = null,
-  onComplete,
-  onClose
+  onComplete
 }) => {
   const [step, setStep] = useState<Step>('profile');
   const [displayName, setDisplayName] = useState(defaultDisplayName);
@@ -44,7 +42,7 @@ export const WelcomeModal: React.FC<WelcomeModalProps> = ({
   const [fullDiskAccessEnabled, setFullDiskAccessEnabled] = useState(defaultFullDiskAccess);
   const [fullDiskStatus, setFullDiskStatus] = useState<'unknown' | 'checking' | 'granted' | 'denied'>('unknown');
   const [isOpeningFullDiskSettings, setIsOpeningFullDiskSettings] = useState(false);
-  const [fullDiskStatusMessage, setFullDiskStatusMessage] = useState<{ tone: 'info' | 'warn'; text: string } | null>(null);
+  const [, setFullDiskStatusMessage] = useState<{ tone: 'info' | 'warn'; text: string } | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [errors, setErrors] = useState<{ displayName?: string }>({});
@@ -116,17 +114,6 @@ export const WelcomeModal: React.FC<WelcomeModalProps> = ({
       void refreshFullDiskStatus();
     }
   }, [isOpen, refreshFullDiskStatus]);
-
-  const handleOpenFullDiskSettings = useCallback(async () => {
-    if (!isMacPlatform) {
-      setFullDiskStatusMessage({
-        tone: 'info',
-        text: 'Full Disk Access is a macOS-only permission. You can continue without granting it.',
-      });
-      return;
-    }
-    setShowFdaGuide(true);
-  }, [isMacPlatform]);
 
   const handleFdaGuideOpenSettings = useCallback(async () => {
     setIsOpeningFullDiskSettings(true);
@@ -414,5 +401,3 @@ export const WelcomeModal: React.FC<WelcomeModalProps> = ({
     </AnimatePresence>
   );
 };
-
-export default WelcomeModal;

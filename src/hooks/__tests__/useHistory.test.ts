@@ -41,18 +41,16 @@ describe('useHistory', () => {
 
     it('clears redo stack when executing new command', async () => {
       const { result } = renderHook(() => useHistory());
-      let value = 0;
-
       const command1: Command = {
         description: 'Command 1',
-        execute: () => { value = 1; },
-        undo: () => { value = 0; },
+        execute: () => {},
+        undo: () => {},
       };
 
       const command2: Command = {
         description: 'Command 2',
-        execute: () => { value = 2; },
-        undo: () => { value = 1; },
+        execute: () => {},
+        undo: () => {},
       };
 
       // Execute command 1

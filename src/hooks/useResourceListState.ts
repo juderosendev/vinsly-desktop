@@ -5,7 +5,7 @@ import { fuzzyMatch } from '../utils/fuzzyMatch';
 /**
  * Common layout modes for resource lists
  */
-export type LayoutMode = 'table' | 'grid';
+type LayoutMode = 'table' | 'grid';
 
 /**
  * Common sort directions
@@ -244,7 +244,7 @@ export function useResourceListState<T extends { id: string }, TFilter extends s
  * Create a filter function for scope-based filtering
  */
 export function createScopeFilter<T extends { scope: string }>(
-  scopeEnum: Record<string, string>
+  _scopeEnum: Record<string, string>
 ) {
   return (item: T, filter: string): boolean => {
     if (filter === 'All') return true;

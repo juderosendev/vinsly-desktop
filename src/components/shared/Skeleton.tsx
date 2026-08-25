@@ -7,7 +7,7 @@ interface SkeletonProps {
 /**
  * Base skeleton component with shimmer animation
  */
-export const Skeleton: React.FC<SkeletonProps> = ({ className = '' }) => {
+const Skeleton: React.FC<SkeletonProps> = ({ className = '' }) => {
   return (
     <div
       className={`animate-skeleton-shimmer bg-gradient-to-r from-v-light-border via-v-light-hover to-v-light-border dark:from-v-border dark:via-v-light-dark dark:to-v-border bg-[length:200%_100%] rounded ${className}`}
@@ -38,7 +38,7 @@ interface SkeletonCardProps {
 /**
  * Card skeleton matching AgentGridCard dimensions
  */
-export const SkeletonCard: React.FC<SkeletonCardProps> = ({ className = '' }) => {
+const SkeletonCard: React.FC<SkeletonCardProps> = ({ className = '' }) => {
   return (
     <div
       className={`rounded-2xl border border-v-light-border/80 dark:border-v-border/70 bg-v-light-surface dark:bg-v-mid-dark/90 p-4 ${className}`}
@@ -102,7 +102,7 @@ interface SkeletonListItemProps {
 /**
  * List item skeleton matching AgentListItem dimensions
  */
-export const SkeletonListItem: React.FC<SkeletonListItemProps> = ({
+const SkeletonListItem: React.FC<SkeletonListItemProps> = ({
   gridTemplateColumns,
   className = ''
 }) => {
